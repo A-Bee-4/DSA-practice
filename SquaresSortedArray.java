@@ -14,6 +14,7 @@ Explanation: After squaring, the array becomes [16,1,0,9,100].
 After sorting, it becomes [0,1,9,16,100].
 
 */
+// 1- Bubble Sort method
 class SquaresSortedArray {
     public int[] sortedSquares(int[] nums) {
 
@@ -33,5 +34,23 @@ class SquaresSortedArray {
             }
         }
         return nums;
+    }
+}
+
+// 2 - Array.sort() method
+public class Solution {
+   public int[] sortedSquares(int[] nums) {
+    int n = nums.length;
+    int[] squares = new int[n];
+
+    // Square each element and store in squares array
+    for (int i = 0; i < n; i++) {
+        squares[i] = nums[i] * nums[i];
+    }
+
+    // Sort the squares array in non-decreasing order
+    Arrays.sort(squares);
+
+    return squares;
     }
 }
